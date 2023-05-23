@@ -13,11 +13,6 @@ Resources:
     Type: "AWS::S3::Bucket"
     BucketName: !Sub "${Env}-${App}-web-hosting"
     Properties:
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: false
-        BlockPublicPolicy: false
-        IgnorePublicAcls: false
-        RestrictPublicBuckets: false
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
