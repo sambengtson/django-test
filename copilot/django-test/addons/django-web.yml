@@ -12,10 +12,16 @@ Resources:
   WebsiteBucket:
     Type: "AWS::S3::Bucket"
     Properties:
+      AccessControl: PublicRead
       BucketName: !Sub "${Env}-${App}-web-hosting"
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
+
+  WebsiteBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref WebsiteBucket
       PolicyDocument:
         Version: '2012-10-17'
         Id: GObjPolicy
@@ -25,6 +31,7 @@ Resources:
             Principal: "*"
             Action: s3:GetObject
             Resource: !Sub "arn:aws:s3:::${Env}-${App}-web-hosting/*"
+
   WebsiteDistribution:
     Type: "AWS::CloudFront::Distribution"
     Properties:
