@@ -30,6 +30,7 @@ stages:
     # test_commands: [echo 'running tests', make test]
 
 build:
+  image: aws/codebuild/standard:6.0
   additional_policy:
     PolicyDocument:
       Version: 2012-10-17
