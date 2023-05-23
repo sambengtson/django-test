@@ -15,8 +15,15 @@ phases:
       - chmod +x ./copilot-linux
   build:
     commands:
-      - echo "Run your tests"
-      # - make test
+      - echo "Build react"
+      - cd $CODEBUILD_SRC_DIR/my-react-app
+      - npm i
+      - npm run build
+      - cd build
+      - bucketenv=$(./copilot-linux env ls)
+      - bucketapp=$(./copilot-linux app ls)
+      - echo $bucketenv-$bucketapp-web-hosting
+      - aws s3 cp ./ s3://$bucketenv-$bucketapp-web-hosting/ --recursive
   post_build:
     commands:
       - ls -l

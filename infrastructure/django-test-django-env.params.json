@@ -1,0 +1,25 @@
+{
+  "Parameters": {
+    "AddonsTemplateURL": "https://stackset-django-test-inf-pipelinebuiltartifactbuc-1fqscxozem3qe.s3.us-west-2.amazonaws.com/manual/addons/django-test/159dad92822c205e5f75d112c0e1cda19c0dbde8117a1a7ecb2a83e50dcfd5c9.yml",
+    "AppName": "django-test",
+    "ContainerImage": "954269689604.dkr.ecr.us-west-2.amazonaws.com/django-test/django-test@sha256:1700f86878ed436bd00a12a338b12c45a7c4bfed0bee76dd1bb0c23b81a3aa38",
+    "ContainerPort": "8000",
+    "DNSDelegated": "false",
+    "EnvFileARN": "",
+    "EnvName": "django-env",
+    "HTTPSEnabled": "false",
+    "LogRetention": "30",
+    "RulePath": "/",
+    "TargetContainer": "django-test",
+    "TargetPort": "8000",
+    "TaskCPU": "256",
+    "TaskCount": "1",
+    "TaskMemory": "512",
+    "WorkloadName": "django-test"
+  },
+  "Tags": {
+    "copilot-application": "django-test",
+    "copilot-environment": "django-env",
+    "copilot-service": "django-test"
+  }
+}
