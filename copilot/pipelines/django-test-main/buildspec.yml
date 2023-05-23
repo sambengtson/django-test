@@ -15,21 +15,13 @@ phases:
       - chmod +x ./copilot-linux
   build:
     commands:
-      - echo "Build react"
-#      - cd $CODEBUILD_SRC_DIR/my-react-app
-#      - npm i
-#      - npm run build
-#      - cd build
-#      - bucketenv=$(../../copilot-linux env ls)
-#      - bucketapp=$(../../copilot-linux app ls)
-#      - echo $bucketenv-$bucketapp-web-hosting
-#      - aws s3 cp ./ s3://$bucketenv-$bucketapp-web-hosting/ --recursive
+      - echo "Run your tests"
+      # - make test
   post_build:
     commands:
       - ls -l
-      - cd $CODEBUILD_SRC_DIR
       - export COLOR="false"
-      - pipeline=$(cat $CODEBUILD_SRC_DIR/copilot/pipelines/django-test-main/manifest.yml | ruby -ryaml -rjson -e 'require "date"; puts JSON.pretty_generate(YAML.load(ARGF, permitted_classes:[Date])))
+      - pipeline=$(cat $CODEBUILD_SRC_DIR/copilot/pipelines/django-test-main/manifest.yml | ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))')
       - pl_envs=$(echo $pipeline | jq -r '.stages[].name')
       # Find all the local services in the workspace.
       - svc_ls_result=$(./copilot-linux svc ls --local --json)
