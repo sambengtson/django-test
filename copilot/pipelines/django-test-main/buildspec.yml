@@ -27,6 +27,7 @@ phases:
   post_build:
     commands:
       - ls -l
+      - cd $CODEBUILD_SRC_DIR
       - export COLOR="false"
       - pipeline=$(cat $CODEBUILD_SRC_DIR/copilot/pipelines/django-test-main/manifest.yml | ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))')
       - pl_envs=$(echo $pipeline | jq -r '.stages[].name')
