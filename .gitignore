@@ -1,0 +1,3 @@
+*node_modules*
+api-test/bin/*
+my-react-app/build/*
