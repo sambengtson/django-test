@@ -19,7 +19,6 @@ Resources:
       BlockPublicAcls: false
       BlockPublicPolicy: false
       IgnorePublicAcls: false
-      RestrictPublicBuckets: false
       PolicyDocument:
         Version: '2012-10-17'
         Id: GObjPolicy
