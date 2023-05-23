@@ -11,8 +11,8 @@ Parameters:
 Resources:
   WebsiteBucket:
     Type: "AWS::S3::Bucket"
-    BucketName: !Sub "${Env}-${App}-web-hosting"
     Properties:
+      BucketName: !Sub "${Env}-${App}-web-hosting"
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
