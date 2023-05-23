@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       docker: 20
       ruby: 2.6
-      nodejs: 16
+      nodejs: 14
     commands:
       - echo "cd into $CODEBUILD_SRC_DIR"
       - cd $CODEBUILD_SRC_DIR
