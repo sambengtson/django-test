@@ -16,9 +16,6 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
-      BlockPublicAcls: false
-      BlockPublicPolicy: false
-      IgnorePublicAcls: false
       PolicyDocument:
         Version: '2012-10-17'
         Id: GObjPolicy
