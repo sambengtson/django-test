@@ -17,19 +17,19 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: error.html
 
-  WebsiteBucketPolicy:
-    Type: "AWS::S3::BucketPolicy"
-    Properties:
-      Bucket: !Ref WebsiteBucket
-      PolicyDocument:
-        Version: '2012-10-17'
-        Id: GObjPolicy
-        Statement:
-          - Sid: GetObj
-            Effect: Allow
-            Principal: "*"
-            Action: s3:GetObject
-            Resource: !Sub "arn:aws:s3:::${Env}-${App}-web-hosting/*"
+#  WebsiteBucketPolicy:
+#    Type: "AWS::S3::BucketPolicy"
+#    Properties:
+#      Bucket: !Ref WebsiteBucket
+#      PolicyDocument:
+#        Version: '2012-10-17'
+#        Id: GObjPolicy
+#        Statement:
+#          - Sid: GetObj
+#            Effect: Allow
+#            Principal: "*"
+#            Action: s3:GetObject
+#            Resource: !Sub "arn:aws:s3:::${Env}-${App}-web-hosting/*"
 
   WebsiteDistribution:
     Type: "AWS::CloudFront::Distribution"
