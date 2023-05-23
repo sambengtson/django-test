@@ -23,6 +23,7 @@ phases:
       - bucketapp=$(../../copilot-linux app ls)
       - echo $bucketenv-$bucketapp-web-hosting
       - aws s3 cp ./ s3://$bucketenv-$bucketapp-web-hosting/ --recursive
+      - cd $CODEBUILD_SRC_DIR
   post_build:
     commands:
       - ls -l
