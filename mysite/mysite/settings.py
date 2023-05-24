@@ -52,6 +52,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -86,12 +88,12 @@ dbName = 'initialdb'
 username = 'postgres'
 password = 'password'
 
-secret = env('DJANGOTESTCLUSTER_SECRET')
-obj_generator = env.json('DJANGOTESTCLUSTER_SECRET')
-dbName = obj_generator['dbname']
-username = obj_generator['username']
-password = obj_generator['password']
-dbHost = obj_generator['host']
+# secret = env('DJANGOTESTCLUSTER_SECRET')
+# obj_generator = env.json('DJANGOTESTCLUSTER_SECRET')
+# dbName = obj_generator['dbname']
+# username = obj_generator['username']
+# password = obj_generator['password']
+# dbHost = obj_generator['host']
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 DATABASES = {
@@ -143,3 +145,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+CORS_ORIGIN_ALLOW_ALL = True

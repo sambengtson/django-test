@@ -2,6 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+    fetch('http://djang-publi-ywvf4eol983g-852841473.us-west-2.elb.amazonaws.com', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstParam: 'yourValue',
+        secondParam: 'yourOtherValue',
+      })
+    })
   return (
     <div className="App">
       <header className="App-header">
