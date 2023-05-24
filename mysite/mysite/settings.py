@@ -88,12 +88,12 @@ dbName = 'initialdb'
 username = 'postgres'
 password = 'password'
 
-# secret = env('DJANGOTESTCLUSTER_SECRET')
-# obj_generator = env.json('DJANGOTESTCLUSTER_SECRET')
-# dbName = obj_generator['dbname']
-# username = obj_generator['username']
-# password = obj_generator['password']
-# dbHost = obj_generator['host']
+secret = env('DJANGOTESTCLUSTER_SECRET')
+obj_generator = env.json('DJANGOTESTCLUSTER_SECRET')
+dbName = obj_generator['dbname']
+username = obj_generator['username']
+password = obj_generator['password']
+dbHost = obj_generator['host']
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 DATABASES = {
