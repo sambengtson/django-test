@@ -8,10 +8,15 @@ cd ./infrastructure
 https://aws.github.io/copilot-cli/
 
 copilot app init example-company
+
 copilot env init -n example-env
+
 copilot svc init --name app --svc-type "Load Balanced Web Service" --dockerfile ./Dockerfile
+
 copilot env deploy --name example-env
+
 copilot deploy
+
 copilot svc package --upload-assets --output-dir ./infrastructure
 
 # pipeline
